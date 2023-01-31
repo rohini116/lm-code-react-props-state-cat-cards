@@ -4,7 +4,7 @@ import Header from './components/header';
 import Footer from './components/footer';
 import { useState } from "react";
 import Cat from './data/cat';
-
+import CatCard from './components/cat_card';
 
 function App(): JSX.Element {
 	const [cats, setCats] = useState<Array<Cat>>([
@@ -82,19 +82,28 @@ function App(): JSX.Element {
     },
   ]);
 	// JavaScript/TypeScript code can be inserted here!
-  console.log("Our pretties 😻: ", cats);
+  
 	return (
-		<>
-			<Navbar />
-			<Header />
+    <>
+      <Navbar />
+      <Header />
 
-			<main>
-				<div className='cards__wrapper'>{}</div>
-			</main>
+      <main>
+        <div className="cards__wrapper">
+          <details>
+            <summary>Click here to see the answer</summary>
+            <pre>
+              {cats.map((cat) => (
+                <CatCard name={cat.name} species={cat.species} favFoods={cat.favFoods} birthYear={cat.birthYear}/>
+              ))}
+            </pre>
+          </details>
+        </div>
+      </main>
 
-			<Footer />
-		</>
-	);
+      <Footer />
+    </>
+  );
 }
 
 export default App;
