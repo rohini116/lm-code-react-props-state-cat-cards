@@ -93,8 +93,8 @@ function App(): JSX.Element {
           <details>
             <summary>Click here to see the answer</summary>
             <pre>
-              {cats.map((cat) => (
-                <CatCard name={cat.name} species={cat.species} favFoods={cat.favFoods} birthYear={cat.birthYear}/>
+              {cats.map((cat, index) => (
+                <CatCard catIndex={index} name={cat.name} species={cat.species} favFoods={cat.favFoods} birthYear={cat.birthYear}/>
               ))}
             </pre>
           </details>
