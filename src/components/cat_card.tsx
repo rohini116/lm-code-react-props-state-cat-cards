@@ -115,7 +115,7 @@ const images = [
 const CatCard: React.FC<CatCardProps> = (props) => (
   <div className="card">
     {props.catIndex < images.length && (
-      <CatImage
+      <CatImage 
         image={images[props.catIndex].image}
         altText={images[props.catIndex].altText}
         licenceType={images[props.catIndex].licenceType}
